@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+      .main-container{
+        padding: 10px;
+      }
+      .nav-heading{
+        font-family: Arial;
+        font-weight: bold;
+      }
+      .image1{
+        height: 60px;
+      }
+      .nav1{
+        font-family: Arial;
+        font-weight: bold;
+      }
+      .main-carousel{
+        height: 100vh;
+      }
+      .image2{
+        height:650px
+      }
+      .footer-basic {
+  padding:40px 0;
+  background-color:#ffffff;
+  color:#4b4c4d;
+}
+
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
+}
+
+.footer-basic li {
+  padding:0 10px;
+}
+
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity:1;
+}
+
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+}
+
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin:0 8px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-basic .social > a:hover {
+  opacity:0.9;
+}
+
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+  margin-bottom:0;
+}
+.home-bg{
+  background-image: url("https://images.pexels.com/photos/338936/pexels-photo-338936.jpeg?cs=srgb&dl=pexels-nejc-ko%C5%A1ir-338936.jpg&fm=jpg");
+  background-size: cover;
+  height: 80vh;
+}
+.home-card{
+  background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+  height: 300px;
+  width: 700px;
+}
+.home-heading{
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  font-size: 55px;
+  font-weight: bold;
+}
+.main-heading{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 50px;
+  margin: 10px;
+  margin-top: 40px;
+  margin-left: 20px;
+}
+.main-para{
+  font-size: 35px;
+  margin: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.image4{
+  margin-top: 40px;
+  margin: 10px;
+  width: 550px;
+  height: 400px;
+  text-align: center;
+}
+    </style>
+</head>
+<body>
+  <div class="main-container">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand nav-heading" href="#">
+            <img src="https://ecosure.com.au/wp-content/uploads/2021/11/carbon-footprint-feature.jpg" class="image1"/> Calculator You
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link nav1" aria-current="page" href="home.html">Home</a>
+              <a class="nav-link nav1" href="information.html">Information</a>
+              <a class="nav-link nav1" href="carbon_calculator.html">Calculator</a>
+              <a class="nav-link nav1" href="limit_footprint.html">Limit Your Carbon Footprint</a>
+              <a class="nav-link nav1" href="login.html">Login</a>
+              <a class="nav-link nav1" href="registration.html">Register</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+        <div class="home-bg d-flex flex-column justify-content-center">
+          <div class="d-flex flex-row justify-content-center">
+          <div class="home-card d-flex flex-column justify-content-center">
+            <h1 class="home-heading">Calculator You</h1>
+          </div>
+        </div>
+        </div>
+        <div class="d-flex flex-row">
+        <div>
+        <h1 class="main-heading">What is Calculator You all about?</h1>
+        <p class="main-para"> Calculator You aims to provide a platform where an individual can calculate their carbon footprints that they emit on an average in their day to day activities. This platform allows individuals to understand all about carbon footprint and ways in which an individual can limit/reduce his/her carbon footprints.</p>
+    </div>
+    <div>
+      <img src="https://ecosure.com.au/wp-content/uploads/2021/11/carbon-footprint-feature.jpg" class="image4"/>
+      </div>
+    </div>
+    <div class="footer-basic">
+      <footer>
+          <ul class="list-inline">
+              <li class="list-inline-item"><a href="home.html">Home</a></li>
+              <li class="list-inline-item"><a href="information.html">Information</a></li>
+              <li class="list-inline-item"><a href="carbon_calculator.html">Calculator</a></li>
+              <li class="list-inline-item"><a href="limit_footprint.html">Limit Your Carbon Footprint</a></li>
+          </ul>
+          <p class="copyright">Calculator You © 2023</p>
+      </footer>
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>

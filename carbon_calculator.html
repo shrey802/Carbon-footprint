@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <style>
+     .main-container{
+        padding: 10px;
+      }
+      .nav-heading{
+        font-family: Arial;
+        font-weight: bold;
+      }
+      .image1{
+        height: 60px;
+      }
+      .nav1{
+        font-family: Arial;
+        font-weight: bold;
+      }
+      .main-carousel{
+        height: 100vh;
+      }
+      .image2{
+        height:650px
+      }
+      .footer-basic {
+  padding:40px 0;
+  background-color:#ffffff;
+  color:#4b4c4d;
+}
+
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
+}
+
+.footer-basic li {
+  padding:0 10px;
+}
+
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity:1;
+}
+
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+}
+
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin:0 8px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-basic .social > a:hover {
+  opacity:0.9;
+}
+
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+  margin-bottom:0;
+}
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input, select {
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #result {
+      margin-top: 20px;
+    }
+    .cal-heading{
+      font-size: 52px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-weight: bold;
+      margin-left: 10px;
+      text-align: center;
+    }
+    .cal{
+      margin-left: 10px;
+      margin-top: 30px;
+    }
+    .ical{
+      margin: 20px;
+    }
+    .sub-heading{
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 52px;
+    }
+    .l-cal{
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-size: 22px;
+    }
+    .buttonn{
+      text-align: center;
+      padding: 10px;
+      width: 200px;
+      font-size: 25px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    .results{
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 30px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand nav-heading" href="#">
+            <img src="https://ecosure.com.au/wp-content/uploads/2021/11/carbon-footprint-feature.jpg" class="image1"/> Carbon Footprint
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link nav1" aria-current="page" href="home.html">Home</a>
+              <a class="nav-link nav1" href="information.html">Information</a>
+              <a class="nav-link nav1" href="carbon_calculator.html">Calculator</a>
+              <a class="nav-link nav1" href="limit_footprint.html">Limit Your Carbon Footprint</a>
+              <a class="nav-link nav1" href="login.html">Login</a>
+              <a class="nav-link nav1" href="registration.html">Register</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+  <h1 class="cal-heading">Carbon Footprint Calculator</h1>
+  <div class="cal">
+  <h2 class="sub-heading">Water Consumption</h2>
+  <div class="ical">
+  <label for="waterDrinking" class="l-cal">Amount of drinking water (liters/day):</label>
+  <input type="number" id="waterDrinking" min="0" value="0">
+
+  <label for="waterBathing" class="l-cal">Amount of water used for bathing (liters/day):</label>
+  <input type="number" id="waterBathing" min="0" value="0">
+
+  <label for="waterCooking" class="l-cal">Amount of water used for cooking (liters/day):</label>
+  <input type="number" id="waterCooking" min="0" value="0">
+
+  <label for="clothesWashing" class="l-cal">Amount of water used for washing clothes (liters/day):</label>
+  <input type="number" id="clothesWashing" min="0" value="0">
+
+  <label for="utensilsWashing" class="l-cal">Amount of water used for washing utensils (liters/day):</label>
+  <input type="number" id="utensilsWashing" min="0" value="0">
+
+  <label for="houseWashing" class="l-cal">Amount of water used for cleaning house (liters/day):</label>
+  <input type="number" id="houseWashing" min="0" value="0">
+
+  <label for="toiletFlushing" class="l-cal">Amount of water utilized during toilet flushing (liters/day):</label>
+  <input type="number" id="toiletFlushing" min="0" value="0">
+</div>
+</div>
+<div class="cal">
+  <h2 class="sub-heading">Food</h2>
+  <div class="ical">
+  <label for="foodPreparation" class="l-cal">Number of meals per day:</label>
+  <input type="number" id="foodPreparation" min="0" value="0">
+</div>
+</div>
+<div class="cal">
+  <h2 class="sub-heading">Electricity Consumption</h2>
+  <div class="ical">
+  <label for="fans" class="l-cal">Number of hours one fan is utilized:</label>
+  <input type="number" id="fans" min="0" value="0">
+
+  <label for="ac" class="l-cal">Number of hours one AC is utilized:</label>
+  <input type="number" id="ac" min="0" value="0">
+
+  <label for="lights" class="l-cal">Number of hours one tubelight is utilized:</label>
+  <input type="number" id="lights" min="0" value="0">
+
+  <label for="elevator" class="l-cal">Number of Floors an elevator is used:</label>
+  <input type="number" id="elevator" min="0" value="0">
+</div>
+</div>
+<div class="cal">
+  <h2 class="sub-heading">Electronic Devices Consumption</h2>
+  <div class="ical">
+  <label for="devicesMobile" class="l-cal">Average Screentime for using a mobile phone (in hours):</label>
+  <input type="number" id="devicesMobile" min="0" value="0">
+
+  <label for="devicesComputer" class="l-cal">Average Screentime for using a computer (in hours):</label>
+  <input type="number" id="devicesComputer" min="0" value="0">
+
+  <label for="devicesLaptops" class="l-cal">Average Screentime for using a laptop (in hours):</label>
+  <input type="number" id="devicesLaptops" min="0" value="0">
+</div>
+</div>
+<div class="cal">
+  <h2 class="sub-heading">Clothing and Footwear Consumption</h2>
+  <div class="ical">
+  <label for="clothingFootwear" class="l-cal">Number of clothes and footwears used daily:</label>
+  <input type="number" id="clothingFootwear" min="0" value="0">
+</div>
+</div>
+<div class="cal">
+  <h2 class="sub-heading">Transportation</h2>
+  <div class="ical">
+  <label for="carMileage" class="l-cal">Total distance of travelling from a car (km/day):</label>
+  <input type="number" id="carMileage" min="0" value="0">
+
+  <label for="bikeMileage" class="l-cal">Total distance of travelling from a bike (km/day):</label>
+  <input type="number" id="bikeMileage" min="0" value="0">
+
+  <label for="busMileage" class="l-cal">Total distance of travelling from a bus (km/day):</label>
+  <input type="number" id="busMileage" min="0" value="0">
+
+  <label for="rickshawMileage" class="l-cal">Total distance of travelling from a rickshaw (km/day):</label>
+  <input type="number" id="rickshawMileage" min="0" value="0">
+</div>
+</div>
+<div class="text-center">
+  <button onclick="calculateFootprint()" class="buttonn">Calculate</button>
+</div>
+
+  <div id="result" class="results"></div>
+  <div class="footer-basic">
+    <footer>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="home.html">Home</a></li>
+          <li class="list-inline-item"><a href="information.html">Information</a></li>
+          <li class="list-inline-item"><a href="carbon_calculator.html">Calculator</a></li>
+          <li class="list-inline-item"><a href="limit_footprint.html">Limit Your Carbon Footprint</a></li>
+        </ul>
+        <p class="copyright">Carbon Footprint © 2023</p>
+    </footer>
+</div>
+
+  <script>
+    function calculateFootprint() {
+      
+      const waterDrinking = parseFloat(document.getElementById('waterDrinking').value);
+      const waterBathing = parseFloat(document.getElementById('waterBathing').value);
+      const waterCooking = parseFloat(document.getElementById('waterCooking').value);
+      const clothesWashing = parseFloat(document.getElementById('clothesWashing').value);
+      const utensilsWashing = parseFloat(document.getElementById('utensilsWashing').value);
+      const houseWashing = parseFloat(document.getElementById('houseWashing').value);
+      const toiletFlushing = parseFloat(document.getElementById('toiletFlushing').value);
+      const foodPreparation = parseFloat(document.getElementById('foodPreparation').value);
+      const fans = parseFloat(document.getElementById('fans').value);
+      const ac = parseFloat(document.getElementById('ac').value);
+      const lights = parseFloat(document.getElementById('lights').value);
+      const elevator = parseFloat(document.getElementById('elevator').value);
+      const devicesMobile = parseFloat(document.getElementById('devicesMobile').value);
+      const devicesComputer = parseFloat(document.getElementById('devicesComputer').value);
+      const devicesLaptops = parseFloat(document.getElementById('devicesLaptops').value);
+      const clothingFootwear = parseFloat(document.getElementById('clothingFootwear').value);
+      const carMileage = parseFloat(document.getElementById('carMileage').value);
+      const bikeMileage = parseFloat(document.getElementById('bikeMileage').value);
+      const busMileage = parseFloat(document.getElementById('busMileage').value);
+      const rickshawMileage = parseFloat(document.getElementById('rickshawMileage').value);
+
+      
+      const averageWaterDrinking = 0.005; // liters per day
+      const averageWaterBathing = 0.055; // liters per day
+      const averageWaterCooking = 0.005;  // liters per day
+      const averageClothesWashing = 0.020; // liters per day
+      const averageUtensilsWashing = 0.010; // liters per day
+      const averageHouseWashing = 0.010;    // liters per day
+      const averageToiletFlushing = 0.010; // liters per day
+      const averageFoodPreparation = 0.2; // kg CO2 per meal
+      const averageFans = 0.018;  // kWh per hour
+      const averageAC = 0.386;   // kWh per hour
+      const averageLights = 0.055; // kWh per hour
+      const averageElevator = 0.02; // kWh per floor
+      const averageDevicesMobile = 0.17; // kg CO2 per hour
+      const averageDevicesComputer = 0.266; // kg CO2 per hour
+      const averageDevicesLaptops = 0.022; // kg CO2 per hour
+      const averageClothingFootwear = 0.019; // kg CO2 per day
+      const averageCarEmission = 0.171;    // kg CO2 per km
+      const averageBikeEmission = 0.132;   // kg CO2 per km
+      const averageBusEmission = 0.345;    // kg CO2 per km
+      const averageRickshawEmission = 0.079; // kg CO2 per km
+
+      
+      const totalWaterFootprint = (waterDrinking * averageWaterDrinking) +
+                                  (waterBathing * averageWaterBathing) +
+                                  (waterCooking * averageWaterCooking) +
+                                  (clothesWashing * averageClothesWashing) +
+                                  (utensilsWashing * averageUtensilsWashing) +
+                                  (houseWashing * averageHouseWashing) +
+                                  (toiletFlushing * averageToiletFlushing) +
+                                  foodPreparation;
+
+      const totalElectricityFootprint = (fans * averageFans) +
+                                        (ac * averageAC) +
+                                        (lights * averageLights) +
+                                        (elevator * averageElevator) +
+                                        devicesMobile +
+                                        devicesComputer +
+                                        devicesLaptops +
+                                        clothingFootwear;
+
+      const totalTransportationFootprint = (carMileage * averageCarEmission) +
+                                          (bikeMileage * averageBikeEmission) +
+                                          (busMileage * averageBusEmission) +
+                                          (rickshawMileage * averageRickshawEmission);
+
+      const totalFootprint = totalWaterFootprint + totalElectricityFootprint + totalTransportationFootprint;
+
+      
+      document.getElementById('result').innerHTML = `<p>Your total carbon footprint is: <strong>${totalFootprint.toFixed(2)} kg CO2/day</strong></p>`;
+    }
+  </script>
+</body>
+</html>
