@@ -52,109 +52,6 @@ app.get('/calci', (req, res) => {
 });
 
 
-
-// function calculateFootprint(event) {
-//   const form = event.target;
-//   const formData = new FormData(form);
-
-//   const waterDrinking = parseFloat(formData.get('waterDrinking'));
-//   const waterBathing = parseFloat(formData.get('waterBathing'));
-//   const waterCooking = parseFloat(formData.get('waterCooking'));
-//   const clothesWashing = parseFloat(formData.get('clothesWashing'));
-//   const utensilsWashing = parseFloat(formData.get('utensilsWashing'));
-//   const houseWashing = parseFloat(formData.get('houseWashing'));
-//   const toiletFlushing = parseFloat(formData.get('toiletFlushing'));
-//   const foodPreparation = parseFloat(formData.get('foodPreparation'));
-//   const fans = parseFloat(formData.get('fans'));
-//   const ac = parseFloat(formData.get('ac'));
-//   const lights = parseFloat(formData.get('lights'));
-//   const elevator = parseFloat(formData.get('elevator'));
-//   const devicesMobile = parseFloat(formData.get('devicesMobile'));
-//   const devicesComputer = parseFloat(formData.get('devicesComputer'));
-//   const devicesLaptops = parseFloat(formData.get('devicesLaptops'));
-//   const clothingFootwear = parseFloat(formData.get('clothingFootwear'));
-//   const carMileage = parseFloat(formData.get('carMileage'));
-//   const bikeMileage = parseFloat(formData.get('bikeMileage'));
-//   const busMileage = parseFloat(formData.get('busMileage'));
-//   const rickshawMileage = parseFloat(formData.get('rickshawMileage'));
-
-//   // Constants for average values
-//   const averageWaterDrinking = 0.005; // liters per day
-//   const averageWaterBathing = 0.055; // liters per day
-//   const averageWaterCooking = 0.005; // liters per day
-//   const averageClothesWashing = 0.020; // liters per day
-//   const averageUtensilsWashing = 0.010; // liters per day
-//   const averageHouseWashing = 0.010; // liters per day
-//   const averageToiletFlushing = 0.010; // liters per day
-//   const averageFoodPreparation = 0.2; // kg CO2 per meal
-//   const averageFans = 0.018; // kWh per hour
-//   const averageAC = 0.386; // kWh per hour
-//   const averageLights = 0.055; // kWh per hour
-//   const averageElevator = 0.02; // kWh per floor
-//   const averageDevicesMobile = 0.17; // kg CO2 per hour
-//   const averageDevicesComputer = 0.266; // kg CO2 per hour
-//   const averageDevicesLaptops = 0.022; // kg CO2 per hour
-//   const averageClothingFootwear = 0.019; // kg CO2 per day
-//   const averageCarEmission = 0.171; // kg CO2 per km
-//   const averageBikeEmission = 0.132; // kg CO2 per km
-//   const averageBusEmission = 0.345; // kg CO2 per km
-//   const averageRickshawEmission = 0.079; // kg CO2 per km
-
-//   // Calculate the footprint based on the form field values
-//   const totalWaterFootprint =
-//     waterDrinking * averageWaterDrinking +
-//     waterBathing * averageWaterBathing +
-//     waterCooking * averageWaterCooking +
-//     clothesWashing * averageClothesWashing +
-//     utensilsWashing * averageUtensilsWashing +
-//     houseWashing * averageHouseWashing +
-//     toiletFlushing * averageToiletFlushing +
-//     foodPreparation * averageFoodPreparation;
-
-//   const totalElectricityFootprint =
-//     fans * averageFans +
-//     ac * averageAC +
-//     lights * averageLights +
-//     elevator * averageElevator +
-//     devicesMobile +
-//     devicesComputer +
-//     devicesLaptops +
-//     clothingFootwear * averageClothingFootwear;
-
-//   const totalTransportationFootprint =
-//     carMileage * averageCarEmission +
-//     bikeMileage * averageBikeEmission +
-//     busMileage * averageBusEmission +
-//     rickshawMileage * averageRickshawEmission;
-
-//   const totalFootprint =
-//     totalWaterFootprint + totalElectricityFootprint + totalTransportationFootprint;
-
-//   return totalFootprint;
-// }
-
-
-// app.post('/storeData', async (req, res) => {
-//   try {
-//     // Calculate the carbon footprint using your calculation logic
-//     const totalFootprint = calculateFootprint(req.body);
-
-//     // Create a new document in the CarbonValue collection
-//     const carbonValueData = new CarbonValue({
-//       value: totalFootprint,
-//     });
-
-//     await carbonValueData.save();
-
-//     console.log('Data inserted into MongoDB');
-    
-//   } catch (error) {
-//     console.error(error);
-//     res.sendStatus(500);
-//   }
-
-// });
-
 app.post('/storeData', async (req, res) => {
   try {
     const waterDrinking = parseFloat(req.body.waterDrinking);
@@ -229,13 +126,49 @@ app.post('/storeData', async (req, res) => {
     value: totalFootprint
   })
   await carbonData.save();
-  res.sendStatus(200);
-  
+  res.redirect('http://localhost:5500/home')
   } catch (error) {
     console.log(error);
   }
 });
 
+
+// LOGIN PART STARTS
+
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'login.html'));
+})
+
+app.post('/loglog', async (req, res) => {
+  const { email, password } = req.body;
+  const user = await User.findOne({ email: email });
+
+  if (!user) {
+    // User with the provided email not found
+    return res.send('alert("User not found.");');
+  }
+
+  // Compare the provided password with the stored password directly
+  if (user.pass === password) {
+    // Passwords match
+    res.redirect('http://localhost:5500/home')
+  } else {
+    // Incorrect password
+    return res.send('alert("Incorrect password.");');
+  }
+});
+
+app.get('/home', (req, res) => {
+  res.sendFile(path.join(__dirname, 'home.html'))
+})
+
+app.get('/info', (req, res) => {
+  res.sendFile(path.join(__dirname, 'information.html'));
+})
+
+app.get('/limit', (req, res) => {
+  res.sendFile(path.join(__dirname, 'limit_footprint.html'))
+})
 
 app.listen(port, () => {
   console.log("App Running on port: ", port);
