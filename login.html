@@ -1,23 +1,22 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>Login Form</title>
+    <title>Login Form</title>
     <link rel="stylesheet" type="text/css" href="style_login.css">
-<body>
-
-        <div class="loginbox">
-            <form>
-    <img src="https://coffeelogin.netlify.app/assets/person.jpg" class="avatar" alt="img">
-        <h1>Login Here</h1>
-            <p>Username</p>
-            <input type="text" name="" placeholder="Enter Username">
-            <p>Password</p>
-            <input type="password" name="" placeholder="Enter Password">
-            <input type="submit" name="" value="Login">
-            <a href="registration.html">Don't have an account?</a>
-        </form>
-
-    </div>
-
-</body>
 </head>
+<body>
+    <div class="loginbox">
+        <form method="post" action="http://localhost:5500/loglog" id="loginform">
+            <img src="https://coffeelogin.netlify.app/assets/person.jpg" class="avatar" alt="img">
+            <h1>Login Here</h1>
+            <p>Email</p>
+            <input type="text" name="email" placeholder="Enter Email">
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Enter Password">
+            <input type="submit" value="Login">
+            <a href="http://localhost:5500/">Don't have an account?</a>
+        </form>
+    </div>
+    <script src="app.js"></script>
+</body>
 </html>
