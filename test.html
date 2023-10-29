@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Carbon Footprint Calculator</title>
+    <style>
+        .main-container{
+        padding: 10px;
+      }
+      .nav-heading{
+        font-family: Arial;
+        font-weight: bold;
+      }
+      .image1{
+        height: 60px;
+      }
+      .nav1{
+        font-family: Arial;
+        font-weight: bold;
+      }
+      .main-carousel{
+        height: 100vh;
+      }
+      .image2{
+        height:650px
+      }
+      .footer-basic {
+  padding:40px 0;
+  background-color:#ffffff;
+  color:#4b4c4d;
+}
+
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
+}
+
+.footer-basic li {
+  padding:0 10px;
+}
+
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity:1;
+}
+
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+}
+
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin:0 8px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-basic .social > a:hover {
+  opacity:0.9;
+}
+
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+  margin-bottom:0;
+}
+.home-bg{
+  background-image: url("https://images.pexels.com/photos/338936/pexels-photo-338936.jpeg?cs=srgb&dl=pexels-nejc-ko%C5%A1ir-338936.jpg&fm=jpg");
+  background-size: cover;
+  height: 80vh;
+}
+.home-card{
+  background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+  height: 300px;
+  width: 700px;
+}
+.home-heading{
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  font-size: 55px;
+  font-weight: bold;
+}
+.main-heading{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 50px;
+  margin: 10px;
+  margin-top: 40px;
+  margin-left: 20px;
+}
+.main-para{
+  font-size: 35px;
+  margin: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.image4{
+  margin-top: 40px;
+  margin: 10px;
+  width: 550px;
+  height: 400px;
+  text-align: center;
+}
+        body {
+    font-family: Arial, sans-serif;
+}
+
+.calculator {
+    max-width: 900px;
+    padding: 20px;
+}
+
+.factor {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input,
+select {
+    margin-bottom: 10px;
+    width: 100%;
+}
+.cal-heading{
+      font-size: 52px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-weight: bold;
+      margin-left: 10px;
+      text-align: center;
+    }
+    .cal{
+      margin-left: 10px;
+      margin-top: 30px;
+    }
+    .sub-heading{
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 52px;
+    }
+    .l-cal{
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-size: 22px;
+    }
+    .c{
+        margin-top: 37px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .button{
+        text-align: center;
+      padding: 10px;
+      width: 200px;
+      font-size: 25px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    .result{
+        font-family: 'Times New Roman', Times, serif;
+      font-size: 30px;
+      margin: 10px;
+    }
+/* Add your styling here */
+
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand nav-heading" href="#">
+                <img src="https://ecosure.com.au/wp-content/uploads/2021/11/carbon-footprint-feature.jpg" class="image1"/> Calculator You
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                  <a class="nav-link nav1" aria-current="page" href="http://localhost:5500/home">Home</a>
+                  <a class="nav-link nav1" href="http://localhost:5500/info">Information</a>
+                  <a class="nav-link nav1" href="http://localhost:5500/calci">Calculator</a>
+                  <a class="nav-link nav1" href="http://localhost:5500/limit">Limit Your Carbon Footprint</a>
+                  <a class="nav-link nav1" href="http://localhost:5500/login">Login</a>
+                  <a class="nav-link nav1" href="http://localhost:5500/">Register</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+          <h2 class="cal-heading">Carbon Footprint Calculator</h2>
+    <div class="calculator">
+<div class="cal">
+    <h1 class="sub-heading">Water Consumption</h1>
+        <!-- Water Consumption -->
+        <div class="factor" id="waterFactor">
+            <label class="l-cal">Water consumed while Bathing</label>
+            <select id="waterBathing" onchange="toggleWaterInput()">
+                <option value="shower">Shower</option>
+                <option value="bucket">Bucket</option>
+            </select>
+            <div id="waterBathingInput" style="display: none;">
+                <label id="waterInputLabel"></label>
+                <input type="number" id="waterInput" min="0" step="1">
+            </div>
+            <label class="l-cal">Average Water consumed for Cooking</label>
+            <select id="waterCooking">
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+            </select>
+            <label class="l-cal">Water consumed for Washing Clothes</label>
+            <select id="clothesWashing" onchange="toggleClothesInput()">
+                <option value="washingMachine">Washing Machine</option>
+                <option value="traditional">Traditional Method</option>
+            </select>
+            <div id="clothesWashingInput" style="display: none;">
+                <label id="clothesInputLabel"></label>
+                <input type="number" id="clothesInput" min="0" step="1">
+            </div>
+            <div class="d-flex flex-row">
+                <div>
+            <label class="l-cal">Time taken to wash utensils (min):</label>
+            <input type="number" id="utensilsTime" min="0" step="1">
+        </div>
+        <div class="c">
+        <p>x</p>
+    </div>
+        <div class="c">
+            <input type="number" id="utensilsFrequency" min="0" step="1" placeholder="Frequency">
+        </div>
+        </div>
+            <label class="l-cal">Total numbers of flush done:</label>
+            <input type="number" id="toiletFlush" min="0" step="1">
+            <label class="l-cal">Amount of drinking water (liters/day):</label>
+            <input type="number" id="drinkWater" min="0" step="1">
+        </div>
+
+        <!-- Electricity Consumption -->
+        <div class="factor" id="electricityFactor">
+            <h1 class="sub-heading">Electricity Consumption</h1>
+            <div class="d-flex flex-row">
+                <div>
+            <label class="l-cal">Number of hours one fan is utilized:</label>
+            <input type="number" id="fanHours" min="0" step="1">
+        </div>
+        <p class="c">x</p>
+        <div class="c">
+            <input type="number" id="totalFans" min="0" step="1" placeholder="Frequency">
+        </div>
+        </div>
+        <div class="d-flex flex-row">
+            <div>
+            <label class="l-cal">Number of hours one AC is utilized:</label>
+            <input type="number" id="acHours" min="0" step="1">
+        </div>
+        <p class="c">x</p>
+        <div class="c">
+            <input type="number" id="totalACs" min="0" step="1" placeholder="Frequency">
+        </div>
+        </div>
+        <div class="d-flex flex-row">
+            <div>
+            <label class="l-cal">Number of hours one Tubelight is utilized:</label>
+            <input type="number" id="tubelightHours" min="0" step="1">
+        </div>
+        <p class="c">x</p>
+        <div class="c">
+            <input type="number" id="totalTubelights" min="0" step="1" placeholder="Frequency">
+        </div>
+        </div>
+        </div>
+
+        <!-- Electronic Device Consumption -->
+        <div class="factor" id="electronicDeviceFactor">
+            <h1 class="sub-heading">Electronic Device Consumption</h1>
+            <label class="l-cal">Average Screentime for using a mobile phone (in hours):</label>
+            <input type="number" id="mobileScreenTime" min="0" step="1">
+            <label class="l-cal">Average Screentime for using a computer (in hours):</label>
+            <input type="number" id="computerScreenTime" min="0" step="1">
+            <label class="l-cal">Average Screentime for using a laptop (in hours):</label>
+            <input type="number" id="laptopScreenTime" min="0" step="1">
+        </div>
+
+        <!-- Clothing and Footwear Consumption -->
+        <div class="factor" id="clothingFootwearFactor">
+            <h1 class="sub-heading">Clothing and Footwear Consumption</h1>
+            <label class="l-cal">Sets of Clothes Used Daily</label>
+            <select id="clothingSets">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="more">More than 5</option>
+            </select>
+            <label class="l-cal">Pairs of footwear Used Daily</label>
+            <select id="footwearPairs">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="more">More than 5</option>
+            </select>
+        </div>
+
+        <!-- Transportation Consumption -->
+        <div class="factor" id="transportationFactor">
+            <h1 class="sub-heading">Transportation Consumption</h1>
+            <label class="l-cal">Total distance of travelling from a car (km/day):</label>
+            <input type="number" id="carDistance" min="0" step="1">
+            <label class="l-cal">Total distance of travelling from a Bike (km/day):</label>
+            <input type="number" id="bikeDistance" min="0" step="1">
+            <label class="l-cal">Total distance of travelling from a Bus (km/day):</label>
+            <input type="number" id="busDistance" min="0" step="1">
+            <label class="l-cal">Total distance of travelling from a Rickshaw (km/day):</label>
+            <input type="number" id="rickshawDistance" min="0" step="1">
+        </div>
+<div>
+        <button onclick="calculateCarbonFootprint()" class="button btn btn-success">Calculate</button>
+    </div>
+        <div id="result" class="result"></div>
+    </div>
+</div>
+    <div class="footer-basic">
+        <footer>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="home.html">Home</a></li>
+                <li class="list-inline-item"><a href="information.html">Information</a></li>
+                <li class="list-inline-item"><a href="carbon_calculator.html">Calculator</a></li>
+                <li class="list-inline-item"><a href="limit_footprint.html">Limit Your Carbon Footprint</a></li>
+            </ul>
+            <p class="copyright">Calculator You © 2023</p>
+        </footer>
+    </div>
+    <script>
+        function toggleWaterInput() {
+    var waterBathing = document.getElementById("waterBathing");
+    var waterBathingInput = document.getElementById("waterBathingInput");
+    var waterInputLabel = document.getElementById("waterInputLabel");
+
+    if (waterBathing.value === "shower") {
+        waterInputLabel.innerText = "Time taken to shower (minutes)";
+    } else if (waterBathing.value === "bucket") {
+        waterInputLabel.innerText = "Number of buckets";
+    }
+
+    waterBathingInput.style.display = waterBathing.value !== "none" ? "block" : "none";
+}
+
+function toggleClothesInput() {
+    var clothesWashing = document.getElementById("clothesWashing");
+    var clothesWashingInput = document.getElementById("clothesWashingInput");
+    var clothesInputLabel = document.getElementById("clothesInputLabel");
+
+    if (clothesWashing.value === "washingMachine") {
+        clothesInputLabel.innerText = "Total time taken by washing machine (minutes)";
+    } else if (clothesWashing.value === "traditional") {
+        clothesInputLabel.innerText = "Number of buckets";
+    }
+
+    clothesWashingInput.style.display = clothesWashing.value !== "none" ? "block" : "none";
+}
+
+function calculateCarbonFootprint() {
+    // Fetch values from input fields
+    var waterBathing = document.getElementById("waterBathing").value;
+    var waterInput = parseFloat(document.getElementById("waterInput").value) || 0;
+    var waterCooking = document.getElementById("waterCooking").value;
+    var clothesWashing = document.getElementById("clothesWashing").value;
+    var clothesInput = parseFloat(document.getElementById("clothesInput").value) || 0;
+    var utensilsTime = parseFloat(document.getElementById("utensilsTime").value) || 0;
+    var utensilsFrequency = parseFloat(document.getElementById("utensilsFrequency").value) || 0;
+    var toiletFlush = parseFloat(document.getElementById("toiletFlush").value) || 0;
+    var drinkWater = parseFloat(document.getElementById("drinkWater").value) || 0;
+
+    var fanHours = parseFloat(document.getElementById("fanHours").value) || 0;
+    var totalFans = parseFloat(document.getElementById("totalFans").value) || 0;
+    var acHours = parseFloat(document.getElementById("acHours").value) || 0;
+    var totalACs = parseFloat(document.getElementById("totalACs").value) || 0;
+    var tubelightHours = parseFloat(document.getElementById("tubelightHours").value) || 0;
+    var totalTubelights = parseFloat(document.getElementById("totalTubelights").value) || 0;
+
+    var mobileScreenTime = parseFloat(document.getElementById("mobileScreenTime").value) || 0;
+    var computerScreenTime = parseFloat(document.getElementById("computerScreenTime").value) || 0;
+    var laptopScreenTime = parseFloat(document.getElementById("laptopScreenTime").value) || 0;
+
+    var clothingSets = parseInt(document.getElementById("clothingSets").value) || 0;
+    var footwearPairs = parseInt(document.getElementById("footwearPairs").value) || 0;
+
+    var carDistance = parseFloat(document.getElementById("carDistance").value) || 0;
+    var bikeDistance = parseFloat(document.getElementById("bikeDistance").value) || 0;
+    var busDistance = parseFloat(document.getElementById("busDistance").value) || 0;
+    var rickshawDistance = parseFloat(document.getElementById("rickshawDistance").value) || 0;
+
+    // Calculate carbon footprint for each factor
+    var waterFootprint = calculateWaterFootprint(waterBathing, waterInput, waterCooking, clothesWashing, clothesInput, utensilsTime, utensilsFrequency, toiletFlush, drinkWater);
+    var electricityFootprint = calculateElectricityFootprint(fanHours, totalFans, acHours, totalACs, tubelightHours, totalTubelights);
+    var electronicDeviceFootprint = calculateElectronicDeviceFootprint(mobileScreenTime, computerScreenTime, laptopScreenTime);
+    var clothingFootprint = calculateClothingFootprint(clothingSets, footwearPairs);
+    var transportationFootprint = calculateTransportationFootprint(carDistance, bikeDistance, busDistance, rickshawDistance);
+
+    // Sum up the footprints to get the total
+    var totalCarbonFootprint = waterFootprint + electricityFootprint + electronicDeviceFootprint + clothingFootprint + transportationFootprint;
+
+    // Display results
+    displayResult(totalCarbonFootprint, waterFootprint, electricityFootprint, electronicDeviceFootprint, clothingFootprint, transportationFootprint);
+}
+
+function calculateWaterFootprint(waterBathing, waterInput, waterCooking, clothesWashing, clothesInput, utensilsTime, utensilsFrequency, toiletFlush, drinkWater) {
+    var waterBathingFactor = (waterBathing === "shower") ? 2 : 1;
+    var waterCookingFactor = (waterCooking === "breakfast") ? 1 : (waterCooking === "lunch") ? 2 : 3;
+    var clothesWashingFactor = (clothesWashing === "washingMachine") ? 2 : 1;
+
+    // Assume 10 liters per minute for shower and 5 liters per bucket
+    var waterFootprint = (waterBathingFactor * waterInput * 0.055) + (clothesWashingFactor * clothesInput * 0.020) + (utensilsTime * utensilsFrequency * 0.010) + (toiletFlush * 0.010) + (drinkWater * 0.005);
+    waterFootprint += waterCookingFactor * 0.005; // Assume 5 liters for cooking
+
+    return waterFootprint;
+}
+
+function calculateElectricityFootprint(fanHours, totalFans, acHours, totalACs, tubelightHours, totalTubelights) {
+    var fanFootprint = fanHours * totalFans * 0.018; // Assume 0.1 kWh per hour per fan
+    var acFootprint = acHours * totalACs * 0.386; // Assume 1.5 kWh per hour per AC
+    var tubelightFootprint = tubelightHours * totalTubelights * 0.055; // Assume 0.05 kWh per hour per tubelight
+
+    return fanFootprint + acFootprint + tubelightFootprint;
+}
+
+function calculateElectronicDeviceFootprint(mobileScreenTime, computerScreenTime, laptopScreenTime) {
+    // Assume 0.02 kWh per hour per mobile, 0.1 kWh per hour per computer, and 0.07 kWh per hour per laptop
+    var mobileFootprint = mobileScreenTime * 0.17;
+    var computerFootprint = computerScreenTime * 0.266;
+    var laptopFootprint = laptopScreenTime * 0.022;
+
+    return mobileFootprint + computerFootprint + laptopFootprint;
+}
+
+function calculateClothingFootprint(clothingSets, footwearPairs) {
+    // Assume 10 kg CO2 per clothing set and 7 kg CO2 per footwear pair
+    var clothingFootprint = clothingSets * 0.0095;
+    var footwearFootprint = footwearPairs * 0.0095;
+
+    return clothingFootprint + footwearFootprint;
+}
+
+function calculateTransportationFootprint(carDistance, bikeDistance, busDistance, rickshawDistance) {
+    // Assume 2.5 kg CO2 per km for car, 0.15 kg CO2 per km for bike, 0.1 kg CO2 per km for bus, and 0.2 kg CO2 per km for rickshaw
+    var carFootprint = carDistance * 0.171;
+    var bikeFootprint = bikeDistance * 0.132;
+    var busFootprint = busDistance * 0.345;
+    var rickshawFootprint = rickshawDistance * 0.079;
+
+    return carFootprint + bikeFootprint + busFootprint + rickshawFootprint;
+}
+
+function displayResult(total, water, electricity, electronic, clothing, transportation) {
+    var resultElement = document.getElementById("result");
+    
+    // Clear previous results
+    resultElement.innerHTML = "";
+
+    // Create a new div element to display each category's footprint
+    var waterDiv = document.createElement("div");
+    waterDiv.innerHTML = "Water Footprint: " + water.toFixed(2) + " liters";
+    resultElement.appendChild(waterDiv);
+
+    var electricityDiv = document.createElement("div");
+    electricityDiv.innerHTML = "Electricity Footprint: " + electricity.toFixed(2) + " kWh";
+    resultElement.appendChild(electricityDiv);
+
+    var electronicDiv = document.createElement("div");
+    electronicDiv.innerHTML = "Electronic Device Footprint: " + electronic.toFixed(2) + " kWh";
+    resultElement.appendChild(electronicDiv);
+
+    var clothingDiv = document.createElement("div");
+    clothingDiv.innerHTML = "Clothing Footprint: " + clothing.toFixed(2) + " kg CO2";
+    resultElement.appendChild(clothingDiv);
+
+    var transportationDiv = document.createElement("div");
+    transportationDiv.innerHTML = "Transportation Footprint: " + transportation.toFixed(2) + " kg CO2";
+    resultElement.appendChild(transportationDiv);
+
+    var totalDiv = document.createElement("div");
+    totalDiv.innerHTML = "<strong>Total Carbon Footprint: " + total.toFixed(2) + " kg CO2</strong>";
+    resultElement.appendChild(totalDiv);
+}
+
+
+    </script>
+</body>
+</html>
