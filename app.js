@@ -171,6 +171,10 @@ app.get('/limit', (req, res) => {
   res.sendFile(path.join(__dirname, 'limit_footprint.html'))
 })
 
+app.get('/calculations', (req, res) => {
+  res.sendFile(path.join(__dirname, 'test.html'))
+})
+
 app.listen(port, () => {
   console.log("App Running on port: ", port);
 });
