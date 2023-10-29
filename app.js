@@ -39,7 +39,7 @@ app.post("/reg", async (req, res) => {
   await userData.save();
   let a = fs.readFileSync("registration.html");
   res.send(a.toString());
-  res.redirect('http://localhost:5500/home')
+  res.redirect('http://localhost:5500/calci')
 });
 
 app.get('/calci', (req, res) => {
